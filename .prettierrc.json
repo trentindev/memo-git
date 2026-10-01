@@ -1,0 +1,10 @@
+{
+  "singleQuote": true,
+  "printWidth": 100,
+  "overrides": [
+    {
+      "files": "src/content/pages.json",
+      "options": { "printWidth": 20 }
+    }
+  ]
+}

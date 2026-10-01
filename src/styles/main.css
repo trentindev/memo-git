@@ -1,0 +1,93 @@
+:root {
+  --color-text: #1f2328;
+  --color-muted: #59636e;
+  --color-background: #ffffff;
+  --color-surface: #f6f8fa;
+  --color-border: #d1d9e0;
+  --color-link: #0550ae;
+  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-code: ui-monospace, 'Cascadia Code', Consolas, 'Liberation Mono', monospace;
+  --content-width: 48rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+a {
+  color: var(--color-link);
+}
+
+a:focus-visible,
+.site-main:focus-visible {
+  outline: 2px solid var(--color-link);
+  outline-offset: 2px;
+}
+
+.site-header,
+.site-footer {
+  padding: 1rem max(1rem, calc((100% - var(--content-width)) / 2 + 1rem));
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  border-style: solid;
+  border-width: 0;
+}
+
+.site-header {
+  border-bottom-width: 1px;
+}
+
+.site-footer {
+  border-top-width: 1px;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-main {
+  max-width: var(--content-width);
+  min-height: 60vh;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.page-list {
+  padding-left: 1.25rem;
+}
+
+.page-list li + li {
+  margin-top: 0.5rem;
+}
+
+.breadcrumb {
+  margin-bottom: 1rem;
+}
+
+.markdown-body code {
+  font-family: var(--font-code);
+}
+
+.markdown-body pre {
+  padding: 1rem;
+  overflow-x: auto;
+  background: var(--color-surface);
+}
