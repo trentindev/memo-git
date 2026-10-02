@@ -2,16 +2,16 @@
 
 Module : Versioning et gestion de versions décentralisé (RNCP 39608, bloc BC03)
 
-Format : matinée en distanciel, de 9 h 00 à 12 h 00, en équipe de cinq.
+Format : travail en équipe, en autonomie.
 
 ## Objectifs du TP
 
-À la fin de la matinée, on sait :
+À la fin du TP, on sait :
 
 1. contribuer à un dépôt partagé sans jamais pousser directement sur `main` ;
 2. nommer une branche et rédiger des messages de commit selon une convention d'équipe ;
 3. ouvrir une pull request, la faire relire, la corriger et la fusionner ;
-4. relire le code d'un camarade et rédiger une review utile ;
+4. relire le code d'un coéquipier et rédiger une review utile ;
 5. exploiter le rapport de SonarQube Cloud pendant une review ;
 6. mettre sa branche à jour avec `main` et résoudre un conflit.
 
@@ -21,46 +21,58 @@ On travaille sur **Mémo Git**, un petit site statique qui affiche des pages ré
 
 Le site est fonctionnel. Pendant le TP, on le fait évoluer en développant des features choisies dans un catalogue (annexe B). Chaque feature correspond à une issue GitHub numérotée de #1 à #12.
 
-## Déroulé (indicatif) de la matinée
+## L'organisation du TP
 
-| Horaire | Séquence | Contenu |
-| --- | --- | --- |
-| 9 h 00 à 9 h 20 | Lancement | Appel, consignes, attribution des numéros E1 à E5 |
-| 9 h 20 à 10 h 30 | Partie 1 | Préparer son poste et réaliser sa première pull request |
-| 10 h 30 à 10 h 45 | Point d'étape 1 | Bilan de la partie 1, choix des premières features |
-| 10 h 45 à 11 h 15 | Partie 2 | Développer une feature, la faire relire avec SonarQube Cloud |
-| 11 h 15 à 11 h 25 | Point d'étape 2 | Bilan de la partie 2, choix des secondes features |
-| 11 h 25 à 11 h 45 | Partie 3 | Développer une seconde feature, synchroniser sa branche, résoudre les conflits |
-| 11 h 45 | Conclusions | Bilan collectif, remise de la fiche de TD |
+Le TP se fait en équipe et en autonomie. Il comporte trois parties, à réaliser dans l'ordre :
 
-Celui qui termine une partie en avance passe à la suivante sans attendre le point d'étape.
+| Partie | Contenu |
+| --- | --- |
+| 1 | Préparer son poste et réaliser sa première pull request |
+| 2 | Développer une feature et la faire relire, avec l'aide de SonarQube Cloud |
+| 3 | Développer une seconde feature, synchroniser sa branche et résoudre les conflits |
 
-## La fiche de TD
+Il n'y a pas d'horaire imposé. Chacun avance à son rythme, et l'équipe se retrouve pour un point d'équipe à la fin de la partie 1 et à la fin de la partie 2. Si le TP n'est pas terminé à la fin de la séance, on le reprend plus tard à l'endroit où on s'est arrêté : le dépôt, les issues et les pull requests conservent l'état du travail.
 
-Chaque élève remplit sa propre fiche de TD, fournie à part. Les questions sont signalées dans ce document par la mention **Fiche de TD**, suivie du numéro de la question. On y répond au moment où elle apparaît : la plupart des réponses demandent de copier un résultat ou d'observer quelque chose à cet instant précis.
+Le TP est terminé quand chaque membre de l'équipe a fusionné sa pull request de la partie 1 et deux features, et a relu au moins une pull request dans chaque partie.
 
-La fiche n'est pas versionnée dans le dépôt du projet. On la remet à l'enseignant à 12 h 00, selon les modalités qu'il indique au lancement.
+Un membre de l'équipe tient le rôle de **chef de projet**. Il a préparé le dépôt en suivant un document à part, « Consignes du chef de projet ». Il communique les adresses utiles et il anime les points d'équipe. Pour tout le reste, il fait le TP comme les autres.
 
-## Les rôles et la rotation des reviewers
+Quand on est bloqué, on demande de l'aide à l'équipe. Quand on a terminé une étape avant les autres, on aide ceux qui en ont besoin, ou on relit une pull request en attente.
 
-Au lancement, l'enseignant attribue à chacun un numéro, de E1 à E5. Ce numéro sert à deux choses : la ligne à compléter dans `CONTRIBUTEURS.md` en partie 1, et la désignation des reviewers.
+## Auteur et reviewer
 
 Dans une pull request, on joue l'un de ces deux rôles :
 
 1. **l'auteur** écrit le code, ouvre la pull request, répond aux remarques et fusionne quand toutes les conditions sont réunies ;
 2. **le reviewer** relit le code, le teste, commente et décide d'approuver ou de demander des modifications.
 
-Les reviewers changent à chaque partie. Le tableau indique, pour chaque auteur, qui relit ses pull requests :
+Ces rôles ne sont pas attribués à l'avance : chacun est l'auteur de ses propres pull requests et le reviewer de celles des autres.
 
-| Auteur | Partie 1 | Partie 2 | Partie 3 |
-| --- | --- | --- | --- |
-| E1 | E2 | E3 et E4 | E5 |
-| E2 | E3 | E4 et E5 | E1 |
-| E3 | E4 | E5 et E1 | E2 |
-| E4 | E5 | E1 et E2 | E3 |
-| E5 | E1 | E2 et E3 | E4 |
+L'auteur désigne lui-même un ou deux reviewers, en respectant deux règles :
 
-Sur la matinée, chacun relit chacun des quatre autres. En partie 2, les deux reviewers doivent approuver avant la fusion. Une pull request ouverte en partie 2 et pas encore fusionnée à 11 h 15 garde ses reviewers de la partie 2.
+1. on change de reviewers à chaque partie ;
+2. on choisit en priorité un coéquipier qui n'a pas encore relu de pull request dans la partie en cours.
+
+Chacun relit au moins une pull request par partie. Quand deux reviewers sont désignés, les deux doivent approuver avant la fusion.
+
+## Tourner et essayer
+
+Chacun participe en fonction de son niveau, et le TP est fait pour essayer :
+
+1. on choisit ses features dans le catalogue selon son niveau, et on peut tenter le niveau au-dessus ;
+2. on relit des pull requests d'un niveau différent du sien : relire un code plus simple apprend à expliquer, relire un code plus difficile apprend à lire ;
+3. on essaie les trois types de review (**Comment**, **Approve**, **Request changes**) et les suggestions ;
+4. on peut développer une feature à deux, en partage d'écran : un seul des deux pousse la branche et ouvre la pull request, et le reviewer est une troisième personne.
+
+On ne risque pas d'abîmer le projet : la branche `main` est protégée, et rien n'y entre sans une pull request approuvée. Une demande de modification fait partie du fonctionnement normal d'une review.
+
+## La fiche de TD
+
+Chaque membre de l'équipe remplit sa propre fiche de TD, fournie à part. Les questions sont signalées dans ce document par la mention **Fiche de TD**, suivie du numéro de la question. On y répond au moment où elle apparaît : la plupart des réponses demandent de copier un résultat ou d'observer quelque chose à cet instant précis.
+
+Pour chaque question, la fiche demande aussi d'indiquer les difficultés rencontrées : commande qui a échoué, message d'erreur, consigne mal comprise, aide reçue d'un coéquipier. S'il n'y en a pas eu, on écrit « Aucune ».
+
+La fiche n'est pas versionnée dans le dépôt du projet. On la conserve : elle sera relevée à la fin du TP.
 
 ## Les gestes GitHub
 
@@ -79,14 +91,18 @@ Les conditions 1 (au moins une approbation) et 2 sont imposées par une règle d
 
 C'est l'auteur qui fusionne sa pull request [G9].
 
-## Lancement
+## Avant de commencer
 
-1. Aadresse du dépôt (`https://github.com/trentindev/memo-git`) et celle du projet SonarQube Cloud ;
-3. vérifie que chacun a reçu l'invitation à collaborer sur le dépôt.
+Le chef de projet communique à l'équipe :
 
-On inscrit son numéro et ces deux adresses en tête de sa fiche de TD.
+1. l'adresse du dépôt (`https://github.com/<proprietaire>/memo-git`) ;
+2. l'adresse du projet SonarQube Cloud.
 
-## Partie 1 : préparer son poste et réaliser sa première pull request (9 h 20 à 10 h 30)
+On inscrit ces deux adresses en tête de sa fiche de TD.
+
+L'équipe attribue ensuite à chacun un numéro de contributeur, de 1 à 5 : on classe les prénoms par ordre alphabétique, le premier prend le numéro 1, le deuxième le numéro 2, et ainsi de suite. Ce numéro ne sert qu'en partie 1 : il désigne la ligne que chacun complète dans le fichier `CONTRIBUTEURS.md`.
+
+## Partie 1 : préparer son poste et réaliser sa première pull request
 
 Objectif : chacun ajoute son nom dans le fichier `CONTRIBUTEURS.md` en passant par une pull request. Le contenu de la modification est volontairement simple, pour se concentrer sur le circuit complet : branche, commit, push, pull request, review, fusion.
 
@@ -153,7 +169,7 @@ On lance ensuite la vérification complète du projet :
 npm run check
 ```
 
-Cette commande enchaîne trois contrôles : ESLint (règles de qualité du JavaScript), Prettier (mise en forme) et les tests unitaires. Les trois doivent réussir avant chaque push, pendant toute la matinée.
+Cette commande enchaîne trois contrôles : ESLint (règles de qualité du JavaScript), Prettier (mise en forme) et les tests unitaires. Les trois doivent réussir avant chaque push, pendant tout le TP.
 
 On regarde comment le dépôt local connaît le dépôt distant :
 
@@ -179,7 +195,7 @@ git pull
 git switch -c docs/13-contributeur-prenom
 ```
 
-On ouvre `CONTRIBUTEURS.md` et on remplace **uniquement** la ligne « À compléter » située sous son numéro par : `Prénom Nom, @compte-github`. On ne touche à aucune autre ligne.
+On ouvre `CONTRIBUTEURS.md` et on remplace **uniquement** la ligne « À compléter » située sous le titre « Contributeur » qui porte son numéro par : `Prénom Nom, @compte-github`. On ne touche à aucune autre ligne.
 
 On vérifie ce qui a changé :
 
@@ -208,7 +224,7 @@ On ouvre la pull request [G3] avec ces éléments :
 
 1. titre : `docs: ajouter Prénom à la liste des contributeurs` ;
 2. description : on complète le modèle, en remplaçant la ligne `Closes #` par `Refs #13` ;
-3. reviewer : celui de la colonne « Partie 1 » du tableau de rotation [G4].
+3. reviewer : un coéquipier de son choix [G4].
 
 **Fiche de TD : Q4.**
 
@@ -258,24 +274,27 @@ On force la suppression :
 git branch -D docs/13-contributeur-prenom
 ```
 
-Si on a terminé avant 10 h 30, on lit le catalogue des features (annexe B) et on passe directement à la partie 2.
+Quand sa pull request est fusionnée, on aide ceux qui n'ont pas terminé, puis on lit le catalogue des features (annexe B) en attendant le point d'équipe.
 
-## Point d'étape 1 (10 h 30 à 10 h 45)
+## Point d'équipe 1
 
-Chacun indique où il en est. Les pull requests de la partie 1 non fusionnées sont terminées après le point d'étape, avant de commencer la partie 2.
+Quand toutes les pull requests de la partie 1 sont fusionnées, le chef de projet réunit l'équipe :
 
-On choisit sa première feature, dans l'ordre suivant : E2, E4, E3, E5, E1. Celui qui choisit en premier dispose du catalogue complet.
+1. chacun indique ce qui lui a posé problème dans la partie 1, et l'équipe y répond ;
+2. chacun annonce la feature qu'il choisit pour la partie 2, en respectant les règles de la section 2.1.
 
-## Partie 2 : développer une feature et la faire relire (10 h 45 à 11 h 15)
+Les features de niveau 1 sont laissées en priorité à ceux qui débutent.
 
-Objectif : livrer une première feature du catalogue en suivant le circuit complet, avec deux reviewers et le rapport de SonarQube Cloud.
+## Partie 2 : développer une feature et la faire relire
+
+Objectif : livrer une première feature du catalogue en suivant le circuit complet, avec un ou deux reviewers et le rapport de SonarQube Cloud.
 
 ### 2.1 Choisir et prendre en charge sa feature
 
 Chaque feature du catalogue indique un niveau et une zone. On choisit en tenant compte de deux règles :
 
 1. on choisit une feature de son niveau, ou du niveau au-dessus ;
-2. en partie 2, deux élèves ne travaillent pas en même temps sur deux features de la même zone.
+2. en partie 2, deux membres de l'équipe ne travaillent pas en même temps sur deux features de la même zone.
 
 La zone indique les fichiers que la feature modifie. La seconde règle garantit qu'aucune pull request de la partie 2 n'entre en conflit avec une autre. On traitera les conflits en partie 3.
 
@@ -330,7 +349,7 @@ On ouvre la pull request [G3] :
 
 1. titre : au format des messages de commit, par exemple `feat(accueil): afficher le nombre de pages disponibles` ;
 2. description : on complète le modèle et on indique `Closes #5` ;
-3. reviewers : les deux élèves de la colonne « Partie 2 » [G4].
+3. reviewers : un ou deux coéquipiers, différents de son reviewer de la partie 1 [G4].
 
 Le dépôt fusionne les pull requests en **squash and merge** : tous les commits de la branche sont regroupés en un seul commit sur `main`, et ce commit reprend le titre de la pull request. C'est pour cela que le titre doit respecter la convention.
 
@@ -387,25 +406,27 @@ git fetch --prune
 git branch -D feat/5-compteur-pages
 ```
 
-## Point d'étape 2 (11 h 15 à 11 h 25)
+## Point d'équipe 2
 
-Chacun présente sa feature en une minute. On note les problèmes signalés par SonarQube Cloud dans les pull requests de l'équipe.
+Quand chacun a fusionné sa première feature, le chef de projet réunit l'équipe :
 
-On choisit sa seconde feature, dans l'ordre inverse du point d'étape 1 : E1, E5, E3, E4, E2.
+1. chacun montre sa feature sur le site, à partir d'un `main` à jour ;
+2. l'équipe passe en revue les problèmes signalés par SonarQube Cloud dans les pull requests de la partie 2 ;
+3. chacun annonce la feature qu'il choisit pour la partie 3, en respectant la consigne de la section 3.1.
 
-## Partie 3 : seconde feature et résolution de conflits (11 h 25 à 12 h 00)
+## Partie 3 : seconde feature et résolution de conflits
 
 Objectif : livrer une seconde feature alors que `main` a évolué depuis la création de sa branche, et intégrer ces évolutions en résolvant les conflits.
 
 ### 3.1 Choisir sa seconde feature
 
-La règle des zones de la partie 2 ne s'applique plus. On choisit de préférence une feature dont la zone a déjà été modifiée par une pull request fusionnée en partie 2, ou une feature de la même zone qu'un camarade : c'est ce qui produit des conflits, et c'est le sujet de cette partie.
+La règle des zones de la partie 2 ne s'applique plus. On choisit de préférence une feature dont la zone a déjà été modifiée par une pull request fusionnée en partie 2, ou une feature de la même zone qu'un coéquipier : c'est ce qui produit des conflits, et c'est le sujet de cette partie.
 
 On prend en charge l'issue [G2], on crée sa branche à partir d'un `main` à jour, on développe et on commite comme en partie 2.
 
 ### 3.2 Synchroniser sa branche avec `main`
 
-Pendant qu'on développe, des camarades fusionnent leurs pull requests dans `main`. Avant d'ouvrir sa pull request, on intègre ces évolutions dans sa branche :
+Pendant qu'on développe, des coéquipiers fusionnent leurs pull requests dans `main`. Avant d'ouvrir sa pull request, on intègre ces évolutions dans sa branche :
 
 ```bash
 git fetch origin
@@ -492,11 +513,11 @@ git merge --abort
 
 ### 3.4 Ouvrir la pull request et la faire relire
 
-On ouvre la pull request [G3] avec le reviewer de la colonne « Partie 3 » [G4], et on suit le même circuit qu'en partie 2.
+On ouvre la pull request [G3] avec un ou deux reviewers, différents de ceux de la partie 2 [G4], et on suit le même circuit qu'en partie 2.
 
-Si un camarade fusionne une pull request pendant la review et que GitHub affiche **This branch has conflicts that must be resolved**, on refait la synchronisation de la section 3.2, puis on pousse. La pull request se met à jour toute seule.
+Si un coéquipier fusionne une pull request pendant la review et que GitHub affiche **This branch has conflicts that must be resolved**, on refait la synchronisation de la section 3.2, puis on pousse. La pull request se met à jour toute seule.
 
-Le reviewer vérifie avec une attention particulière les commits de fusion : une résolution de conflit est du code comme un autre, et c'est l'endroit où l'on perd le plus facilement le travail d'un camarade.
+Le reviewer vérifie avec une attention particulière les commits de fusion : une résolution de conflit est du code comme un autre, et c'est l'endroit où l'on perd le plus facilement le travail d'un coéquipier.
 
 **Fiche de TD : Q16.**
 
@@ -521,9 +542,9 @@ Contrairement à `--force`, `--force-with-lease` refuse d'écraser la branche di
 
 **Fiche de TD : Q17.**
 
-## Conclusions (12 h 00)
+## Bilan
 
-On affiche ensemble l'historique de `main` :
+Quand chacun a fusionné sa seconde feature, on affiche l'historique de `main` :
 
 ```bash
 git switch main
@@ -531,9 +552,9 @@ git pull
 git log --oneline --graph -20
 ```
 
-Chacun répond à la dernière question de la fiche, puis la remet à l'enseignant.
-
 **Fiche de TD : Q18.**
+
+Le chef de projet réunit l'équipe pour un dernier point : ce qui a bien fonctionné, ce qui a posé problème, et les features du catalogue qui restent à développer si l'équipe poursuit le projet.
 
 ## Annexe A : les gestes GitHub
 
@@ -566,7 +587,7 @@ On clique sur **Create pull request**. La flèche à droite de ce bouton propose
 
 ### G4 : désigner ou relancer les reviewers
 
-Dans la colonne de droite de la pull request, on clique sur **Reviewers** (ou sur l'icône d'engrenage à côté), on tape le nom du compte du camarade, on le sélectionne, puis on clique en dehors de la liste pour enregistrer.
+Dans la colonne de droite de la pull request, on clique sur **Reviewers** (ou sur l'icône d'engrenage à côté), on tape le nom du compte du coéquipier, on le sélectionne, puis on clique en dehors de la liste pour enregistrer.
 
 Après avoir corrigé suite à une review, on relance le reviewer : à côté de son nom, dans la même rubrique, on clique sur l'icône **Re-request review** (deux flèches en cercle). Le reviewer reçoit une notification.
 
@@ -598,7 +619,7 @@ Quand la remarque est traitée, le reviewer qui l'a ouverte clique sur **Resolve
 
 ### G8 : lire le rapport de SonarQube Cloud dans une pull request
 
-Quelques minutes après chaque push sur la branche d'une pull request, SonarQube Cloud publie son résultat à trois endroits :
+Après chaque push sur la branche d'une pull request, SonarQube Cloud lance une analyse. Quand elle est terminée, il publie son résultat à trois endroits :
 
 1. dans l'onglet **Conversation**, un commentaire de SonarQube Cloud résume l'analyse : statut de la quality gate (**Quality Gate passed** ou **Quality Gate failed**), nombre de nouveaux problèmes, security hotspots, duplication ; le lien **See analysis details on SonarQube Cloud** ouvre le détail ;
 2. en bas de l'onglet **Conversation**, dans la liste des vérifications, la ligne **SonarCloud Code Analysis** indique le statut ; le lien **Details** ouvre le rapport dans l'onglet **Checks** ;
@@ -616,7 +637,7 @@ La pull request passe au statut **Merged**. Le dépôt est configuré pour suppr
 
 ## Annexe B : catalogue des features
 
-Douze features sont proposées, une par issue GitHub (#1 à #12). Chaque élève en livre au moins deux sur la matinée.
+Douze features sont proposées, une par issue GitHub (#1 à #12). Chaque membre de l'équipe en livre au moins deux.
 
 Le niveau indique la difficulté :
 
@@ -918,11 +939,11 @@ Deux précisions :
 | Accepter (Accept) | Le problème est réel, mais on décide de ne pas le corriger maintenant, avec une justification écrite |
 | Faux positif (False positive) | La règle se trompe dans ce contexte précis, avec une justification écrite |
 
-Pendant ce TP, on corrige le code. Si on pense être face à un faux positif, on en discute avec son reviewer dans la pull request, et on fait valider la décision par l'enseignant.
+Pendant ce TP, on corrige le code. Si on pense être face à un faux positif, on en discute avec son reviewer dans la pull request, et on y écrit la décision prise et sa justification.
 
 ### Où consulter les résultats
 
-Dans chaque pull request [G8], et sur la page du projet SonarQube Cloud dont l'enseignant communique l'adresse au lancement. Le dépôt étant public, cette page se consulte sans compte. Les onglets les plus utiles sont **Summary** (synthèse), **Issues** (liste des problèmes) et **Security Hotspots**.
+Dans chaque pull request [G8], et sur la page du projet SonarQube Cloud dont le chef de projet communique l'adresse. Le dépôt étant public, cette page se consulte sans compte. Les onglets les plus utiles sont **Summary** (synthèse), **Issues** (liste des problèmes) et **Security Hotspots**.
 
 ## Annexe E : sources pour aller plus loin
 
